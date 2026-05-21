@@ -49,23 +49,25 @@ Equipped with an advanced custom Middleware pipeline that intercepts any unhandl
 
 ### 3. Unified API Response Wrapper (`BaseResponse<T>`)
 Every response follows a predictable enterprise JSON signature, enhancing frontend integration predictability:
-```json
-{
-  "success": false,
-  "message": "Validation failed.",
-  "data": null,
-  "errors": [
-    "Product name is required.",
-    "Price must be greater than zero."
-  ]
-}
-4. Decoupled FluentValidation Pipeline
+    ```json
+    {
+      "success": false,
+      "message": "Validation failed.",
+      "data": null,
+      "errors": [
+        "Product name is required.",
+        "Price must be greater than zero."
+      ]
+    }
+
+
+### 4. Decoupled FluentValidation Pipeline
 Business validation rules are fully isolated from the models into high-performance Validator classes instead of polluting entities with standard [Required] data annotations.
 
-5. High-Performance Pagination & Filtering
+### 5. High-Performance Pagination & Filtering
 Prevents database performance degradation via cursor/paging control. The GetPagedProductsAsync endpoint leverages efficient .Skip() and .Take() logic paired with conditional keyword lookups, returning proper paging metadata (totalCount, totalPages).
 
-6. Structured Industrial Logging via Serilog
+### 6. Structured Industrial Logging via Serilog
 Replaces default console loggers with Serilog. Features dual-sink capability:
 
 Real-time formatted console output during local development.
